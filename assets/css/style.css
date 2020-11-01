@@ -1,0 +1,50 @@
+.form-control {
+  width: 85%;
+}
+
+.main-container {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  min-height: 200%;
+}
+
+.sidebar {
+  padding-top: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-sm {
+  width: 15%;
+}
+
+.history {
+  min-width: 100%;
+}
+
+.weather-container {
+  padding: 30px 0 30px 20px;
+  margin-bottom: 20px;
+}
+
+.forecast-container {
+  display: flex;
+  padding-top: 5px;
+}
+
+.weather-card {
+  background-color: #007bff;
+  color: white;
+  margin-right: 20px;
+}
+
+.temp-info {
+  padding: 3px 0 0 0;
+}
