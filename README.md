@@ -2,7 +2,7 @@
 ## Purpose
 
 The application shows the weather by city. It shows the weather of the day you are in and also the one of 5 days later. The current day shows the temperature, humidity, wind speed and UV Index. The 5 day forecast shows only the temperature and humidity. 
-In general, an image will be displayed both on the current weather day and on the 5 day >forecast that corresponds to the weather conditions.
+In general, an image will be displayed both on the current weather day and on the 5 day forecast that corresponds to the weather conditions.
 
 ## Built With
 - HTML
