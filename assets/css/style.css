@@ -21,6 +21,11 @@
   flex-wrap: wrap;
 }
 
+.form-label {
+  font-size: 1.1rem;
+  margin: 0 0 0 5px;
+}
+
 .btn-sm {
   width: 15%;
 }
@@ -47,4 +52,8 @@
 
 .temp-info {
   padding: 3px 0 0 0;
+}
+
+.hide {
+  display: none;
 }

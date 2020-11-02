@@ -22,82 +22,35 @@
     <main class="main-container">
 
         <!--sidebar containing search and search history-->
-    <div class="col-12 col-md-4 sidebar">
-            <p>Search for a City:</p>  
-            <div class="search-container">    
-            <input type="text" placeholder="Type city name here..." class="form-control form-control-lg" />
-            <button class="btn btn-primary btn-sm">🔎</button>
-            </div>
+    <div class="col-12 col-md-4 sidebar"> 
+            <form id="user-form" class="search-container">
+            <label class="form-label" for="city">Search for a City:</label> 
+            <input type="text" placeholder="Type city name here..." class="form-control form-control-lg" autofocus="true" id="city" name="city"/>
+            <button type="submit" class="btn btn-primary btn-sm">🔎</button>
+            </form>
             
-        <div class="card mt-2 history" id="search-history">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Houston, TX</li>
-                    <li class="list-group-item">Sunnyvale, CA</li>
-                    <li class="list-group-item">Austin, TX</li>
-                    <li class="list-group-item">New York, NY</li>
+        <div class="card mt-2 history">
+                <ul class="list-group list-group-flush" id="search-history">
+                    <li class="list-group-item"></li>
                 </ul>
         </div>
     </div>
 
-        <!--weather shows up here-->
-        <div class="col-12 col-md-8">
+        <!--current weather-->
+        <div class="col-12 col-md-8 hide" id="main">
             <div class="card weather-container">
-                <h2><span class="location">Houston</span> <span class="date">(11/01/2020)</span><span class="current-icon">☁️</span></h2>
-                <p>Temperature: <span class="current-temp">90.9 F</span></p>
-                <p>Humidity: <span class="current-hum">70%</span></p>
-                <p>Wind Speed: <span class="current-wind">100mph</span></p>
-                <p>UV Index: <span class="uv-index">4.9</span></p>
+                <h2><span class="location"></span> <span class="date"></span><span class="current-icon" id="current-icon"></span></h2>
+                <p>Temperature: <span class="current-temp"></span></p>
+                <p>Humidity: <span class="current-hum"></span></p>
+                <p>Wind Speed: <span class="current-wind"></span></p>
+                <p>UV Index: <span class="uv-index" id="uv-index"></span></p>
             </div>
+
+        <!--weather forecast-->
             <h2>Weather Forecast:</h2>
-            <div class="forecast-container">
-                
-                <div class="card weather-card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">11/02/2020</h5>
-                      <p class="temp-info">☁️</p>
-                      <p class="temp-info">Temperature: <span class="temp">90f</span></p>
-                      <p class="temp-info">Humidity: <span class="humidity">20%</span></p>
-                    </div>
-                  </div>
-
-                <div class="card weather-card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">11/02/2020</h5>
-                      <p class="temp-info">☁️</p>
-                      <p class="temp-info">Temperature: <span class="temp">90f</span></p>
-                      <p class="temp-info">Humidity: <span class="humidity">20%</span></p>
-                    </div>
-                  </div>
-
-                <div class="card weather-card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">11/02/2020</h5>
-                      <p class="temp-info">☁️</p>
-                      <p class="temp-info">Temperature: <span class="temp">90f</span></p>
-                      <p class="temp-info">Humidity: <span class="humidity">20%</span></p>
-                    </div>
-                  </div>
-
-                <div class="card weather-card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">11/02/2020</h5>
-                      <p class="temp-info">☁️</p>
-                      <p class="temp-info">Temperature: <span class="temp">90f</span></p>
-                      <p class="temp-info">Humidity: <span class="humidity">20%</span></p>
-                    </div>
-                  </div>
-
-                <div class="card weather-card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">11/02/2020</h5>
-                      <p class="temp-info">☁️</p>
-                      <p class="temp-info">Temperature: <span class="temp">90f</span></p>
-                      <p class="temp-info">Humidity: <span class="humidity">20%</span></p>
-                    </div>
-                  </div>
-
-        </div>
+            <div class="forecast-container" id="forecast">
+            </div>
     </main>
-
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
