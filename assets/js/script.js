@@ -2,7 +2,11 @@ var apiKey = "a1d8b8f684383df9eff3ae909b0d743e";
 
 var userFormEl = document.querySelector("#user-form");
 var cityInputEl = document.querySelector("#city");
-var showContainer = document.querySelector("#main");
+var showMainContainer = document.querySelector("#main");
+var showHistoryContainer = document.querySelector("#search-history-container");
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
 var formSubmitHandler = function(event) {
     event.preventDefault();   
@@ -18,7 +22,8 @@ var formSubmitHandler = function(event) {
     //reset UV color each time the user searches for a new city
     var uvClasses = document.querySelector('.uv-index');
     uvClasses.classList.remove('bg-success','bg-warning', 'bg-orange','bg-danger', 'bg-purple');
-    showContainer.classList.remove("hide");
+    showMainContainer.classList.remove("hide");
+    showHistoryContainer.classList.remove("hide");
 
     searchHistory(cityName);
     retrieveHistory();
@@ -28,9 +33,14 @@ var searchHistory = function(cityName){
     // Get array from local storage
     var retrievedData = JSON.parse(localStorage.getItem("searches"));
     // Append cityname to the array
+    cityName = cityName.toLowerCase();
+    if (retrievedData.includes(cityName)) {
+    
+    } else {
     retrievedData.push(cityName);
     // Save the array to local storage
     localStorage.setItem("searches", JSON.stringify(retrievedData));
+    };
 }
 
 var retrieveHistory = function(){
@@ -43,13 +53,16 @@ var retrieveHistory = function(){
     var searchHistoryContainer = document.getElementById("search-history");
     searchHistoryContainer.innerHTML = "";
     // Iterate each element in array
-    retrievedData.forEach((element,index) => {
+    retrievedData.forEach((element) => {
         // document.createElement
         var searchHistoryContainerEl = document.createElement("li");
+        searchHistoryContainerEl.onclick = function() {
+            getCurrentWeather(element);
+        }
         searchHistoryContainerEl.classList.add("list-group-item");
         searchHistoryContainer.appendChild(searchHistoryContainerEl);
 
-        var searchHistoryEl = document.createTextNode(element);
+        var searchHistoryEl = document.createTextNode(element.capitalize());
         searchHistoryContainerEl.appendChild(searchHistoryEl);   
     })
 };
