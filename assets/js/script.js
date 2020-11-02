@@ -58,7 +58,7 @@ var retrieveHistory = function(){
 
 var getCurrentWeather = function(city) {
     //format the openweather api url
-    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
     
     //make a request to the url
     fetch (apiUrl)
@@ -92,7 +92,7 @@ var displayResults = function(weather) {
 
     //create a new variable for icon name
     var iconName = `${weather.weather[0].icon}`
-    var iconUrl = "http://openweathermap.org/img/wn/"+ iconName + "@2x.png";
+    var iconUrl = "https://openweathermap.org/img/wn/"+ iconName + "@2x.png";
 
     var img = document.createElement("img");
     img.src = iconUrl
@@ -105,7 +105,7 @@ var displayResults = function(weather) {
     var latitudeEl = (weather.coord.lat);
 
     //create new fetch request for UV url
-    var uvURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latitudeEl + "&lon=" + longitudeEl + "&appid=" + apiKey;
+    var uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latitudeEl + "&lon=" + longitudeEl + "&appid=" + apiKey;
     fetch (uvURL)
     .then(uv => {
         return uv.json();
@@ -152,7 +152,7 @@ var displayResults = function(weather) {
                 var forecastTemp = element.temp.day;
                 var forecastHumidity = element.humidity;
                 var iconName = element.weather[0].icon;
-                var iconUrl = "http://openweathermap.org/img/wn/" + iconName + ".png";
+                var iconUrl = "https://openweathermap.org/img/wn/" + iconName + ".png";
 
                 // Get ID of Parent Container
                 var containerEl = document.getElementById("forecast");
