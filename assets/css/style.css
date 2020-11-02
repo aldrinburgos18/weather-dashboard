@@ -57,3 +57,16 @@
 .hide {
   display: none;
 }
+
+@media screen and (max-width: 980px) {
+  .weather-card {
+    min-width: 100%;
+    align-items: center;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .forecast-container {
+    display: block;
+  }
+}
